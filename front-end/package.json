@@ -1,6 +1,8 @@
 {
-  "name": "front-end",
-  "version": "0.1.0",
+  "name": "Dashboard-Front",
+  "version": "0.0.1",
+  "description": "Oncase Fullstack Challenge",
+  "author": "Mateus Elias",
   "private": true,
   "homepage": "/dashboard",
   "dependencies": {
