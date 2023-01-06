@@ -18,7 +18,7 @@ export const TopBar = styled.div`
   background-color: #2596be;
 `;
 
-export const TopBarFields = styled.div`
+export const TopBarFields = styled.form`
   display: flex;
   flex-wrap: wrap;
   flex-directon: row;
