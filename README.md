@@ -27,7 +27,7 @@ cd back-end
 
 ### > Setting the environment variables
 
-Create a file named ``.env`` and copy and past in it what is inside the ``.env.example`` file.
+Create a file named ``.env`` and copy and past in it what is inside the ``.env.example`` file (create the ``.env`` file in the same place that ``.env.example`` file is localized).
 
 ### > Docker image setup
 
@@ -105,13 +105,12 @@ You should receive an output like this:
 
 ```bash
 ## Entering the directory
-cd ..
 cd front-end
 ```
 
 ### > Setting the environment variables
 
-Create a file named ``.env`` and copy and past in it what is inside the ``.env.example`` file.
+Create a file named ``.env`` and copy and past in it what is inside the ``.env.example`` file (create the ``.env`` file in the same place that ``.env.example`` file is localized).
 
 ### > Running the app
 
