@@ -22,7 +22,7 @@ cd Oncase-Challenge
 
 ```bash
 ## Entering the directory
-cd Oncase-Challenge/back-end
+cd back-end
 ```
 
 ### > Setting the environment variables
@@ -103,7 +103,7 @@ You should receive an output like this:
 ```bash
 ## Entering the directory
 cd ..
-cd Oncase-Challenge/front-end
+cd front-end
 ```
 
 ### > Setting the environment variables
