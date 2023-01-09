@@ -1,5 +1,5 @@
 import { ApiProperty, ApiTags } from '@nestjs/swagger';
-import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
+import { IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
 
 @ApiTags('UpdateEmployeeDto')
 export class UpdateEmployeeDto {
@@ -14,6 +14,7 @@ export class UpdateEmployeeDto {
     maxLength: 200,
     nullable: true,
   })
+  @IsOptional()
   @IsString()
   firstName?: string;
 
@@ -23,10 +24,12 @@ export class UpdateEmployeeDto {
     maxLength: 200,
     nullable: true,
   })
+  @IsOptional()
   @IsString()
   lastName?: string;
 
   @ApiProperty({ name: 'participation', type: Number, nullable: true })
+  @IsOptional()
   @IsNumber()
   participation?: number;
 }
