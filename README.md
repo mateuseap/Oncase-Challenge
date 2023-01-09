@@ -22,7 +22,7 @@ cd Oncase-Challenge
 
 ```bash
 ## Entering the directory
-cd Oncase-Challenge/back-end
+cd back-end
 ```
 
 ### > Setting the environment variables
@@ -48,6 +48,9 @@ docker run --name dashboard -e POSTGRES_PASSWORD=docker -e POSTGRES_DB=dashboard
 You have to build the application before running the migrations:
 
 ```bash
+# Installing the dependencies
+npm install
+
 # Building the application
 npm run build
 ```
@@ -91,7 +94,7 @@ After running it, you'll just need to run the back-end app again and the databas
 
 ```bash
 # Controllers unit tests
-npm run test:controlles
+npm run test:controllers
 ```
 
 You should receive an output like this:
@@ -103,7 +106,7 @@ You should receive an output like this:
 ```bash
 ## Entering the directory
 cd ..
-cd Oncase-Challenge/front-end
+cd front-end
 ```
 
 ### > Setting the environment variables
