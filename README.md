@@ -74,7 +74,7 @@ npm run start:prod
 
 Open [http://localhost:3000/dashboard/api/swagger](http://localhost:3000/dashboard/api/swagger) to vsualize the ``Swagger`` of this project in your browser. There you can test all the endpoints of the API without needing softwares like ``Postman`` and ``Insomnia``
 
-![swagger](https://i.imgur.com/DOyCjqh_d.webp?maxwidth=760&fidelity=grand)
+![swagger](https://i.imgur.com/rZR7qmt.png)
 
 ### > Resetting the database
 
@@ -85,7 +85,7 @@ To reset the database, you'll need to run the following command:
 npm run typeorm:schema-drop
 ```
 
-AFter running it, you'll just need to run the back-end app again and the database will be already reseted.
+After running it, you'll just need to run the back-end app again and the database will be already reseted.
 
 ## 🚀 Front-end
 
