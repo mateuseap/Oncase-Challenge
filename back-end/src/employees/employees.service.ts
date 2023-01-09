@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { AppDataSource } from 'src/app.datasource';
+import { AppDataSource } from '../app.datasource';
 import { CreateEmployeeDto } from './dto/create-employee.dto';
 import { EmployeeDto } from './dto/employee.dto';
 import { UpdateEmployeeDto } from './dto/update-employee.dto';
@@ -30,6 +30,7 @@ export class EmployeesService {
   updateEmployeeDtoToEntity(updateEmployeeDto: UpdateEmployeeDto): Employee {
     const employee = new Employee();
 
+    employee.id = updateEmployeeDto.id;
     employee.firstName = updateEmployeeDto.firstName;
     employee.lastName = updateEmployeeDto.lastName;
     employee.participation = updateEmployeeDto.participation;

@@ -30,9 +30,9 @@ export class EmployeesController {
 
   @ApiResponse({ status: 200, description: 'Get all employees' })
   @Get()
-  async findAll(@Res() response: Response) {
+  async findAll() {
     const employees = await this.employeesService.findAll();
-    response.status(200).send(employees);
+    return employees;
   }
 
   @ApiResponse({ status: 200, description: 'Get one employee' })
