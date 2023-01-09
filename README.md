@@ -87,6 +87,17 @@ npm run typeorm:schema-drop
 
 After running it, you'll just need to run the back-end app again and the database will be already reseted.
 
+### > Running tests
+
+```bash
+# Controllers unit tests
+npm run test:controlles
+```
+
+You should receive an output like this:
+
+![controllers-unit-tests](https://i.imgur.com/xf9jWoP.png)
+
 ## 🚀 Front-end
 
 ```bash
