@@ -114,6 +114,9 @@ function Home() {
               }}
               value={employee?.firstName}
               onChange={employeeFirstNameUpdate}
+              InputProps={{
+                inputProps: { maxLength: 200 },
+              }}
             />
             <StyledInput
               required
@@ -126,6 +129,9 @@ function Home() {
               }}
               value={employee?.lastName}
               onChange={employeeLastNameUpdate}
+              InputProps={{
+                inputProps: { maxLength: 200 },
+              }}
             />
             <StyledInput
               required
