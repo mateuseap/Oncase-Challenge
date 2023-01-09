@@ -94,7 +94,7 @@ After running it, you'll just need to run the back-end app again and the databas
 
 ```bash
 # Controllers unit tests
-npm run test:controlles
+npm run test:controllers
 ```
 
 You should receive an output like this:
