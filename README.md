@@ -48,6 +48,9 @@ docker run --name dashboard -e POSTGRES_PASSWORD=docker -e POSTGRES_DB=dashboard
 You have to build the application before running the migrations:
 
 ```bash
+# Installing the dependencies
+npm install
+
 # Building the application
 npm run build
 ```
