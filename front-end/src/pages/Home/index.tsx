@@ -1,6 +1,3 @@
-import ReactApexChart from 'react-apexcharts';
-import { ApexOptions } from 'apexcharts';
-import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import {
@@ -18,6 +15,8 @@ import {
 import { Employee } from '../../types/Employee.d';
 import { EmployeesService } from '../../services/EmployeesService';
 import 'react-toastify/dist/ReactToastify.css';
+import DonutChart from '../../components/DonutChart';
+import Table from '../../components/Table';
 
 function Home() {
   const [newEmployee, setNewEmployee] = useState<boolean>();
@@ -27,69 +26,6 @@ function Home() {
     participation: -1,
   });
   const [employees, setEmployees] = useState<Employee[]>([]);
-  const [series, setSeries] = useState<number[]>(
-    employees.map(tempEmployee => tempEmployee.participation),
-  );
-  const [labels, setLabels] = useState<string[]>();
-  const [rows, setRows] = useState<Employee[]>(
-    employees.map((tempEmployee, index) => ({
-      id: index + 1,
-      firstName: tempEmployee.firstName,
-      lastName: tempEmployee.lastName,
-      participation: tempEmployee.participation,
-    })),
-  );
-  const columns: GridColDef[] = [
-    { field: 'id', renderHeader: () => '', width: 5, align: 'center' },
-    { field: 'firstName', headerName: 'First name', width: 130 },
-    { field: 'lastName', headerName: 'Last name', width: 130 },
-    {
-      field: 'participation',
-      headerName: 'Participation',
-      width: 100,
-      align: 'center',
-      renderCell: params => `${params.row.participation}%`,
-    },
-  ];
-  const options: ApexOptions = {
-    series,
-    labels,
-    chart: {
-      type: 'donut',
-    },
-    legend: {
-      show: true,
-      position: 'right',
-      fontSize: '13px',
-      markers: {
-        width: 25,
-        height: 25,
-        radius: 5,
-        offsetY: 8,
-        offsetX: -8,
-      },
-      labels: {
-        useSeriesColors: true,
-      },
-      offsetY: -19,
-      itemMargin: {
-        vertical: 10,
-      },
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    plotOptions: {
-      pie: {
-        donut: {
-          labels: {
-            show: false,
-          },
-          size: '52%',
-        },
-      },
-    },
-  };
 
   async function getEmployees() {
     EmployeesService.getEmployees()
@@ -140,24 +76,6 @@ function Home() {
       getEmployees();
     }
   }, [newEmployee]);
-
-  useEffect(() => {
-    const newSeries = employees.map(tempEmployee => tempEmployee.participation);
-    setSeries(newSeries);
-
-    const newLabels = employees.map(
-      tempEmployee => `${tempEmployee.firstName} ${tempEmployee.lastName}`,
-    );
-    setLabels(newLabels);
-
-    const newRows = employees.map((tempEmployee, index) => ({
-      id: index + 1,
-      firstName: tempEmployee.firstName,
-      lastName: tempEmployee.lastName,
-      participation: tempEmployee.participation,
-    }));
-    setRows(newRows);
-  }, [employees]);
 
   const employeeFirstNameUpdate = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setEmployee({ ...employee, firstName: event.target.value });
@@ -248,16 +166,10 @@ function Home() {
         <Content>
           <Columns>
             <TableColumn>
-              <DataGrid
-                rows={rows}
-                columns={columns}
-                pageSize={5}
-                rowsPerPageOptions={[5]}
-                sx={{ height: '80%' }}
-              />
+              <Table employees={employees} />
             </TableColumn>
             <ChartColumn>
-              <ReactApexChart options={options} series={series} type='donut' />
+              <DonutChart employees={employees} />
             </ChartColumn>
           </Columns>
         </Content>
