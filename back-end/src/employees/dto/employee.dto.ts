@@ -13,7 +13,8 @@ export class EmployeeDto {
   @IsString()
   lastName!: string;
 
-  @ApiProperty({ name: 'participation', type: Number, nullable: true })
+  @ApiProperty({ name: 'participation', type: Number })
+  @IsNotEmpty()
   @IsNumber()
-  participation?: number;
+  participation!: number;
 }

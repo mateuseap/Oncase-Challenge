@@ -16,7 +16,7 @@ export class Employee {
   @Column({ name: 'lastName', length: 200 })
   lastName!: string;
 
-  @ApiProperty({ name: 'participation', type: Number, nullable: true })
-  @Column({ name: 'participation', nullable: true })
-  participation?: number;
+  @ApiProperty({ name: 'participation', type: Number })
+  @Column({ name: 'participation' })
+  participation!: number;
 }
