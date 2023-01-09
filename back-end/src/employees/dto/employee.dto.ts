@@ -3,6 +3,11 @@ import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
 @ApiTags('EmployeeDto')
 export class EmployeeDto {
+  @ApiProperty({ name: 'id', type: Number })
+  @IsNotEmpty()
+  @IsNumber()
+  id!: number;
+
   @ApiProperty({ name: 'firstName', type: String, maxLength: 200 })
   @IsNotEmpty()
   @IsString()

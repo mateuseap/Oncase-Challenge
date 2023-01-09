@@ -1,8 +1,13 @@
 import { ApiProperty, ApiTags } from '@nestjs/swagger';
-import { IsNumber, IsString } from 'class-validator';
+import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
 @ApiTags('UpdateEmployeeDto')
 export class UpdateEmployeeDto {
+  @ApiProperty({ name: 'id', type: Number })
+  @IsNotEmpty()
+  @IsNumber()
+  id!: number;
+
   @ApiProperty({
     name: 'firstName',
     type: String,
