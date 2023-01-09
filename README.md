@@ -74,6 +74,8 @@ npm run start:prod
 
 Open [http://localhost:3000/dashboard/api/swagger](http://localhost:3000/dashboard/api/swagger) to vsualize the ``Swagger`` of this project in your browser. There you can test all the endpoints of the API without needing softwares like ``Postman`` and ``Insomnia``
 
+![swagger](https://i.imgur.com/DOyCjqh_d.webp?maxwidth=760&fidelity=grand)
+
 ### > Resetting the database
 
 To reset the database, you'll need to run the following command:
