@@ -2,7 +2,7 @@ import { DataSource } from 'typeorm';
 import { ConfigService } from '@nestjs/config';
 import { config } from 'dotenv';
 import { Employee } from './employees/entities/employee.entity';
-import { CreateEmployee1672996126957 } from './database/migrations/1672996126957-CreateEmployee';
+import { CreateEmployee1673253958195 } from './database/migrations/1673253958195-CreateEmployee';
 
 config();
 
@@ -18,5 +18,5 @@ export const AppDataSource = new DataSource({
   synchronize: false,
   logging: false,
   entities: [Employee],
-  migrations: [CreateEmployee1672996126957],
+  migrations: [CreateEmployee1673253958195],
 });
